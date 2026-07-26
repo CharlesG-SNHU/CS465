@@ -7,6 +7,7 @@ var hbs = require('hbs');
 
 var indexRouter = require('./app_server/routes/index');
 var travelRouter = require('./app_server/routes/travel');
+require('./app_server/models/db');
 
 var app = express();
 
