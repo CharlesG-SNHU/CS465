@@ -7,7 +7,9 @@ var hbs = require('hbs');
 
 var indexRouter = require('./app_server/routes/index');
 var travelRouter = require('./app_server/routes/travel');
-require('./app_server/models/db');
+require('./app_api/models/db');
+var apiRouter = require('./app_api/routes/index');
+
 
 var app = express();
 
@@ -25,6 +27,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 //NOTE: Change this to feed the dynamic page over the static page
 app.use('/', indexRouter);
 app.use('/travel', travelRouter);
+app.use('/api', apiRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
