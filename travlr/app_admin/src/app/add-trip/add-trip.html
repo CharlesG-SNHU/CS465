@@ -1,0 +1,70 @@
+<div class="container">
+  <h2>Add Trip</h2>
+  <form [formGroup]="addForm" (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+      <label for="code" class="form-label">Code</label>
+      <input type="text" class="form-control" id="code" formControlName="code">
+      @if (submitted && f['code'].errors) {
+        <div class="text-danger">Code is required</div>
+      }
+    </div>
+
+    <div class="mb-3">
+      <label for="name" class="form-label">Name</label>
+      <input type="text" class="form-control" id="name" formControlName="name">
+      @if (submitted && f['name'].errors) {
+        <div class="text-danger">Name is required</div>
+      }
+    </div>
+
+    <div class="mb-3">
+      <label for="length" class="form-label">Length</label>
+      <input type="text" class="form-control" id="length" formControlName="length">
+      @if (submitted && f['length'].errors) {
+        <div class="text-danger">Length is required</div>
+      }
+    </div>
+
+    <div class="mb-3">
+      <label for="start" class="form-label">Start Date</label>
+      <input type="date" class="form-control" id="start" formControlName="start">
+      @if (submitted && f['start'].errors) {
+        <div class="text-danger">Start date is required</div>
+      }
+    </div>
+
+    <div class="mb-3">
+      <label for="resort" class="form-label">Resort</label>
+      <input type="text" class="form-control" id="resort" formControlName="resort">
+      @if (submitted && f['resort'].errors) {
+        <div class="text-danger">Resort is required</div>
+      }
+    </div>
+
+    <div class="mb-3">
+      <label for="perPerson" class="form-label">Price Per Person</label>
+      <input type="text" class="form-control" id="perPerson" formControlName="perPerson">
+      @if (submitted && f['perPerson'].errors) {
+        <div class="text-danger">Price is required</div>
+      }
+    </div>
+
+    <div class="mb-3">
+      <label for="image" class="form-label">Image Filename</label>
+      <input type="text" class="form-control" id="image" formControlName="image">
+      @if (submitted && f['image'].errors) {
+        <div class="text-danger">Image filename is required</div>
+      }
+    </div>
+
+    <div class="mb-3">
+      <label for="description" class="form-label">Description</label>
+      <textarea class="form-control" id="description" formControlName="description" rows="4"></textarea>
+      @if (submitted && f['description'].errors) {
+        <div class="text-danger">Description is required</div>
+      }
+    </div>
+
+    <button type="submit" class="btn btn-primary">Add Trip</button>
+  </form>
+</div>
