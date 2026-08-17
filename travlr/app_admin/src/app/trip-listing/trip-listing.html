@@ -1,4 +1,6 @@
-<button type="button" class="btn btn-primary mb-3" (click)="addTrip()">Add Trip</button>
+@if (isLoggedIn()) {
+  <button type="button" class="btn btn-primary mb-3" (click)="addTrip()">Add Trip</button>
+}
 
 <div class="row">
   @for (trip of trips(); track trip.code) {

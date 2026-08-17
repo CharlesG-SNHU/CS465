@@ -1,0 +1,10 @@
+@if (!isLoggedIn()) {
+  <a class="nav-item" routerLink="login">
+    <span class="has-icon-left">Log In</span>
+  </a>
+}
+@if (isLoggedIn()) {
+  <a class="nav-item active" (click)="onLogout()">
+    <span class="has-icon-left">Log Out</span>
+  </a>
+}

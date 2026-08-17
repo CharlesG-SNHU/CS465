@@ -9,6 +9,8 @@
       {{ trip.length }} only {{ trip.perPerson | currency:'USD':'symbol' }} per person
     </p>
     <p class="card-text" [innerHTML]="trip.description"></p>
-    <button type="button" class="btn btn-secondary" (click)="editTrip()">Edit Trip</button>
+    @if (isLoggedIn()) {
+      <button type="button" class="btn btn-secondary" (click)="editTrip()">Edit Trip</button>
+    }
   </div>
 </div>
